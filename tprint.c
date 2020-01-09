@@ -289,17 +289,17 @@ static void tprint_print_with_borders (TPrint *tprint)
     }
 
     full_width += g_list_length (tprint->l_columns);
-    full_width -= 1;
+    //full_width -= 1;
 
 
     if (tprint->show_header) {
-        str = g_new0 (gchar, full_width + 1);
+        str = g_new0 (gchar, full_width);
         for (i = 0; i < full_width; i++)
-            str[i] = '=';
+            str[i] = '-';
         str[i] = '\0';
 
         g_fprintf (tprint->fout, "%*s%s\n", 
-            tprint->spaces_left + 1, "",
+            tprint->spaces_left + 1, "-",
             str
         );
         g_free (str);
@@ -350,11 +350,11 @@ static void tprint_print_with_borders (TPrint *tprint)
 
     str = g_new0 (gchar, full_width + 1);
     for (i = 0; i < full_width; i++)
-        str[i] = '=';
+        str[i] = '-';
     str[i] = '\0';
 
     g_fprintf (tprint->fout, "%*s%s\n", 
-        tprint->spaces_left + 1, "",
+        tprint->spaces_left + 1, "-",
         str
     );
     g_free (str);
@@ -398,11 +398,11 @@ static void tprint_print_with_borders (TPrint *tprint)
 
     str = g_new0 (gchar, full_width + 1);
     for (i = 0; i < full_width; i++)
-        str[i] = '=';
+        str[i] = '-';
     str[i] = '\0';
 
     g_fprintf (tprint->fout, "%*s%s\n", 
-        tprint->spaces_left + 1, "",
+        tprint->spaces_left + 1, "-",
         str
     );
     g_free (str);

@@ -40,11 +40,21 @@ int main ()
     gchar *s;
 
     tp = tprint_create (stderr, TRUE, TRUE, 0, 4);
+    //tp = tprint_create (stderr, TRUE, FALSE, 0, 4);
+    //tp = tprint_create (stderr, FALSE, FALSE, 0, 4);
+    //tp = tprint_create (stderr, FALSE, TRUE, 0, 4);
 
+#if 0
     tprint_column_add (tp, "", TPAlign_center, TPAlign_right);
     tprint_column_add (tp, "Align left", TPAlign_center, TPAlign_left);
     tprint_column_add (tp, "Align right", TPAlign_center, TPAlign_right);
     tprint_column_add (tp, "1", TPAlign_center, TPAlign_left);
+    tprint_column_add (tp, "Align center", TPAlign_center, TPAlign_center);
+#endif
+    tprint_column_add (tp, "", TPAlign_center, TPAlign_center);
+    tprint_column_add (tp, "Align left", TPAlign_center, TPAlign_center);
+    tprint_column_add (tp, "Align right", TPAlign_center, TPAlign_center);
+    tprint_column_add (tp, "1", TPAlign_center, TPAlign_center);
     tprint_column_add (tp, "Align center", TPAlign_center, TPAlign_center);
     /*
     tprint_column_add (tp, "test 2", TPAlign_center, TPAlign_left);
